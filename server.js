@@ -7,6 +7,7 @@ import movieRouter from './Routes/movie/movie.js';
 import registerRouter from './Routes/Authentication/register.js';
 import loginRouter from './Routes/Authentication/login.js';
 import ticketRouter from './Routes/ticket/ticket.js';
+import PaymentRouter from './Routes/payment/paymentRouter.js';
 
 
 
@@ -27,6 +28,7 @@ server.use('/movie', movieRouter)
 server.use('/register', registerRouter)
 server.use('/login', loginRouter)
 server.use('/ticket', ticketRouter)
+server.use('/create-order', PaymentRouter)
 
 const port = 8000;
 server.listen(port, ()=>{

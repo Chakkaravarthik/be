@@ -32,6 +32,7 @@ ticketRouter.post("/", async (req, res) => {
 
        
         user.tickets.push(newTicketRes);
+        console.log("ticket res", newTicketRes);
 
        
         await user.save();
@@ -39,7 +40,6 @@ ticketRouter.post("/", async (req, res) => {
       
         res.status(200).send({ msg: "Ticket booked successfully", ticket: newTicketRes });
 
-        console.log(newTicketRes);
 
     } catch (e) {
         console.error("Error booking ticket:", e);
