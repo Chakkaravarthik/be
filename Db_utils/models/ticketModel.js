@@ -19,6 +19,10 @@ const ticketSchema = new mongoose.Schema({
         type:"String",
         required:true,
     },
+    orderId:{
+        type:"String",
+        required:true,
+    }
 })
 
 const ticketModel = new mongoose.model('ticket', ticketSchema, 'tickets');
