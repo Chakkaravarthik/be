@@ -37,4 +37,23 @@ loginRouter.post('/', async (req, res) => {
     }
 });
 
+
+
+loginRouter.get('/', async (req, res) => {
+    try {
+        const userlist = await userModel.find({});
+
+        if (userlist.length === 0) {
+            return res.status(404).send({ msg: 'No users available' });
+        }
+
+        return res.status(200).send({ userlist });
+
+    } catch (e) {
+        console.error(e);
+        return res.status(500).send({ msg: 'Internal Server Error' });
+    }
+});
+
+
 export default loginRouter;
